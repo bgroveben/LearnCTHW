@@ -3,7 +3,8 @@
 CFLAGS=-Wall -g
 
 clean:
-	rm -f ex1
+	rm -f ex3
+
 
 # Extra credit
 # Create an all: ex1 target that will build ex1 with just the command make.
