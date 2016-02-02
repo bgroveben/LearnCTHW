@@ -1,7 +1,7 @@
 /* This isn't part of 'Learn C the Hard Way', but I just have to try it.
 I found this on Rosetta Code:
 https://www.rosettacode.org/wiki/FizzBuzz#C*/
-#include<stdio.h>
+#include <stdio.h>
 
 int main (void)
 {

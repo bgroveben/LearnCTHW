@@ -2,8 +2,10 @@
 # To start off with, create a file with just this in it:
 CFLAGS=-Wall -g
 
+all: fizzbuzz  ex1 ex3
+
 clean:
-	rm -f ex3
+	rm -rf fizzbuzz fizzbuzz.dSYM ex1 ex1.dSYM ex3 ex3.dSYM
 
 
 # Extra credit
