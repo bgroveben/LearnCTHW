@@ -25,4 +25,16 @@ int main(int argc, char *argv[])
 /*
 In this program we're declaring variables of different types and then
 printing them with different printf format strings.
+
+Here's the breakdown of how they match up:
+Integers:
+You declare integers with the int keyword and print them using %d.
+Floating Point:
+Declared with float or double depending on how big they need to be, and printed with %f.
+Character:
+Declared with char, written with a single quote '' around the character, and printed with a %c.
+String(Array of Characters):
+Declared with char name[], written with double quotes "" around the characters, and printed with %s.
+
+Note that C makes a distinction between single-quotes for char and double-quote for char[] or strings
 */
