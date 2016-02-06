@@ -5,23 +5,26 @@ int main(int argc, char *argv[])
     int bugs = 100;
     double bug_rate = 1.2;
 
-    printf("You have %d bugs at the imaginary rate of %f.\n", bugs, bug_rate);
+    printf("You have %d bugs at the imaginary rate of %f.\n",
+            bugs, bug_rate);
 
     long universe_of_defects = 1L * 1024L * 1024L * 1024L;
-//  long universe_of_defects = 21474836488800000000;
-//  >> error: integer literal is too large to be represented in any integer type
-    printf("The entire universe has %ld bugs.\n", universe_of_defects);
+    printf("The entire universe has %ld bugs.\n",
+            universe_of_defects);
 
     double expected_bugs = bugs * bug_rate;
-    printf("You are expected to have %f bugs.\n", expected_bugs);
+    printf("You are expected to have %f bugs.\n",
+            expected_bugs);
 
     double part_of_universe = expected_bugs / universe_of_defects;
-    printf("That is only a %e portion of the universe.\n", part_of_universe);
+    printf("That is only a %e portion of the universe.\n",
+            part_of_universe);
 
-    // This part makes no sense, it is just a demonstration of something weird
+    // this makes no sense, just a demo of something weird
     char nul_byte = '\0';
     int care_percentage = bugs * nul_byte;
-    printf("Which means you should care %d%%.\n", care_percentage);
+    printf("Which means you should care %d%%.\n",
+            care_percentage);
 
     return 0;
 }
