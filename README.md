@@ -6,5 +6,4 @@ Thanks Zed!
 
 I am here:
 
-http://c.learncodethehardway.org/book/ex8.html
-How To Break It and Extra Credit
+http://c.learncodethehardway.org/book/ex9.html
