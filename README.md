@@ -6,7 +6,7 @@ Thanks Zed!
 
 I am here:
 
-http://c.learncodethehardway.org/book/ex9.html
+http://c.learncodethehardway.org/book/ex10.html
 
 Here's a handy reference site I found:
 

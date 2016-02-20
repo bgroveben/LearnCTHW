@@ -2,8 +2,8 @@
 
 int main(int argc, char *argv[])
 {
-    int numbers[4] = {0};
-    char name[4] = {'a'};
+    int numbers[4] = {2};
+    char name[4] = {'a', 'b', 'c', '\0'};  // This is one way, but not the preferred way, to make a string
 
     // first, print them out raw
     printf("numbers: %d %d %d %d\n",
@@ -22,13 +22,13 @@ int main(int argc, char *argv[])
     numbers[2] = 3;
     numbers[3] = 4;
 
-    //set up the name
-    name[0] = 'Z';
-    name[1] = 'e';
-    name[2] = 'd';
-    name[3] = '\0';
+    // set up the name
+    name[0] = 90;   // 'Z'
+    name[1] = 101;  // 'e'
+    name[2] = 100;  // 'd'
+    name[3] = '\0'; // null character for last bit  www.ascii-code.com
 
-    // then print thme out initialized
+    // then print them out initialized
     printf("numbers: %d %d %d %d\n",
             numbers[0], numbers[1],
             numbers[2], numbers[3]);
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     printf("name: %s\n", name);
 
     // another way to use name
-    char *another = "Zed";
+    char *another = "Zed";  // This is another, preferred way to make a string
 
     printf("another: %s\n", another);
 
@@ -51,3 +51,5 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+// In the C language, there is no difference between a string and an array of characters.
