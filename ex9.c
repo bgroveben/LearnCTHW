@@ -53,3 +53,4 @@ int main(int argc, char *argv[])
 }
 
 // In the C language, there is no difference between a string and an array of characters.
+// To paraphrase, a string and an array of bytes are the same thing.
