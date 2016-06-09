@@ -10,7 +10,7 @@ https://github.com/zedshaw/learn-c-the-hard-way-lectures
 
 I am here:
 
-http://c.learncodethehardway.org/book/ex15.html
+http://c.learncodethehardway.org/book/ex16.html
 
 Here's a handy reference site I found:
 
