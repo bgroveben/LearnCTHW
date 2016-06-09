@@ -22,7 +22,7 @@ int main(int argc, char *argv[])
 
     printf("---\n");
 
-    // set up the pointes to the start of the arrays
+    // setup the pointers to the start of the arrays
     int *cur_age = ages;
     char **cur_name = names;
 
