@@ -44,6 +44,12 @@ struct Person {
     int height;
     int weight;
 };
+/*
+A struct is a complex data type declaration that defines a physically grouped list of variables to be placed
+under one name in a block of memory, allowing the different variables to be accessed via a single pointer,
+or the struct declared name which returns the same address.
+https://en.wikipedia.org/wiki/Struct_(C_programming_language)
+*/
 
 struct Person *Person_create(char *name, int age, int height, int weight)
 {
@@ -95,7 +101,7 @@ int main(int argc, char *argv[])
     joe->height -= 2;
     joe->weight += 40;
     Person_print(joe);
-    
+
     frank->age += 20;
     frank->weight += 20;
     Person_print(frank);

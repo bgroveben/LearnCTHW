@@ -1,4 +1,13 @@
 // Exercise 15: Pointers Dreaded Pointers
+/*
+In computer science, a pointer isa programming language object, whose value refers (points) to another value
+stored elsewhere in the computer memory using its memory address.
+A pointer references a location in memory, and obtaining the value stored at that location is known as
+dereferencing the pointer.
+A page number in a book's index is a pointer to the corresponding page.
+You are dereferencing the pointer when you actually go to the page with the given page number.
+https://en.wikipedia.org/wiki/Pointer_(computer_programming)
+*/
 // Here is a frivolous program that prints a group of people's ages in three different ways:
 
 #include <stdio.h>
