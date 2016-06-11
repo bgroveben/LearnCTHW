@@ -1,6 +1,6 @@
 // Exercise 15: Pointers Dreaded Pointers
 /*
-In computer science, a pointer isa programming language object, whose value refers (points) to another value
+In computer science, a pointer is a programming language object, whose value refers (points) to another value
 stored elsewhere in the computer memory using its memory address.
 A pointer references a location in memory, and obtaining the value stored at that location is known as
 dereferencing the pointer.
@@ -33,11 +33,14 @@ int main(int argc, char *argv[])
 
     // setup the pointers to the start of the arrays
     int *cur_age = ages;
-    char **cur_name = names;
+    char **cur_name = names;  // since names is 2-dimensional (an array of strings)
+    // you need char ** for a 'pointer to (a pointer to char)' type
 
     // second way using pointers
     for(i = 0; i < count; i++) {
         printf("%s is %d years old.\n", *(cur_name+i), *(cur_age+i));
+        // *(cur_name+i) is the same as name[i]
+        // the value of (pointer cur_name plus i)
     }
 
     printf("---\n");
@@ -49,10 +52,10 @@ int main(int argc, char *argv[])
 
     printf("---\n");
 
-    // fourth way with pointers in a stupid complex way
-    for(cur_name = names, cur_age = ages;
-            (cur_age - ages) < count;
-            cur_name++, cur_age++)
+    // fourth way with pointers in a stupid complex way using various pointer arithmetic methods
+    for(cur_name = names, cur_age = ages; // initialize
+            (cur_age - ages) < count; // test portion -- compare distance of the pointer from the start of ages
+            cur_name++, cur_age++) // increment -- point at the next element of the name and age arrays 
     {
         printf("%s lived %d years so far.\n", *cur_name, *cur_age);
     }
