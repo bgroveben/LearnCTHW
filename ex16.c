@@ -54,9 +54,14 @@ https://en.wikipedia.org/wiki/Struct_(C_programming_language)
 struct Person *Person_create(char *name, int age, int height, int weight)
 {
     struct Person *who = malloc(sizeof(struct Person));
+    // the malloc() function allocates size bytes and returns a pointer to the allocated memory
+    // the memory is NOT initialized
     assert(who != NULL);
+    // assert() is implemented as a macro and is used for debugging
 
     who->name = strdup(name);
+    // the strdup() function returns a pointer to a new string which is a duplicate of the string name
+    // memory for the new (duplicate) string is obtained with malloc() and can be freed with free()
     who->age = age;
     who->height = height;
     who->weight = weight;
@@ -65,11 +70,13 @@ struct Person *Person_create(char *name, int age, int height, int weight)
 }
 
 void Person_destroy(struct Person *who)
+// destroy destructs an object in allocated memory -- if you have a create, you need a destroy
 {
     assert(who != NULL);
 
     free(who->name);
     free(who);
+    // use the function free() to return the memory we got with malloc() and strdup()
 }
 
 void Person_print(struct Person *who)
@@ -81,6 +88,7 @@ void Person_print(struct Person *who)
 }
 
 int main(int argc, char *argv[])
+// finally, we get to make some people -- that is what the main function is here for 
 {
     // make two people structures
     struct Person *joe = Person_create(
