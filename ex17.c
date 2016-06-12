@@ -4,12 +4,15 @@
 #include <stdio.h>
 #include <assert.h>
 #include <stdlib.h>
-#include <errno.h>
-#include <string.h>
+#include <errno.h>  // Macros reporting error conditions
+#include <string.h> // String handling
 
+// The #define directive takes two forms: defining a constant and creating a macro
 #define MAX_DATA 512
 #define MAX_ROWS 100
+// It looks like these are constants
 
+// In ex16, Zed says that structs are 'similar to a record in a database table'.
 struct Address {
     int id;
     int set;
@@ -22,30 +25,42 @@ struct Database {
 };
 
 struct Connection {
+    // Remember, if you add a * directly before a variable name, it will declare the variable to be a pointer
     FILE *file;
+    // *ptr means 'the value of whatever ptr is pointed at'
     struct Database *db;
+    // Also remember to assign a pointer to memory address before using it
 };
 
 void die(const char *message)
+// The die() function is used to quit your script and display a message for the user to read
 {
     if(errno) {
+        // Check linux man pages for errno(3)
         perror(message);
+        // The C library function void perror(const char *str) prints a descriptive error message to stderr
     } else {
         printf("ERROR: %s\n", message);
     }
-
-    exit(1);
+    // https://stackoverflow.com/questions/9944785/what-is-the-difference-between-exit0-and-exit1-in-c
+    exit(1);  // aka EXIT_FAILURE, although it does not have to be a 1
+    // The C standard defines EXIT_FAILURE as the standard value for returning unsuccessful termination
 }
 
 void Address_print(struct Address *addr)
 {
     printf("%d %s %s\n",
             addr->id, addr->name, addr->email);
+            // The -> operator lets us access a member of the structure pointed to by a pointer
+            // https://www.cs.cf.ac.uk/Dave/C/node10.html -- pointers on pointers...Yeah, I said it.
 }
 
 void Database_load(struct Connection *conn)
 {
     int rc = fread(conn->db, sizeof(struct Database), 1, conn->file);
+    // fread() reads data from conn->file into the array conn->db
+    // size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream)
+    // http://www.tutorialspoint.com/c_standard_library/c_function_fread.htm
     if(rc != 1) die("Failed to load database.");
 }
 
