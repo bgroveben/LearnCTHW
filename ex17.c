@@ -73,6 +73,7 @@ struct Connection *Database_open(const char *filename, char mode)
     if(!conn->db) die("Memory error");
 
     if(mode == 'c') {
+        // c=create, g=get, s=set, d=del, l=list
         conn->file = fopen(filename, "w");
     } else {
         conn->file = fopen(filename, "r+");
@@ -91,19 +92,25 @@ void Database_close(struct Connection *conn)
 {
     if(conn) {
         if(conn->file) fclose(conn->file);
+        // fclose(3) - closes the given file stream
         if(conn->db) free(conn->db);
         free(conn);
+        // The C library function void free(void *ptr) deallocates the memory previously
+        // allocated by a call to calloc, malloc, or realloc
     }
 }
 
 void Database_write(struct Connection *conn)
 {
     rewind(conn->file);
+    // The C library function void rewind(FILE *stream) sets the file position to the beginning
+    // of the file of the given stream
 
     int rc = fwrite(conn->db, sizeof(struct Database), 1, conn->file);
     if(rc != 1) die("Failed to write database.");
 
     rc = fflush(conn->file);
+    // int fflush(FILE *stream) flushes the output buffer of a stream
     if(rc == -1) die("Cannot flush database.");
 }
 
@@ -116,6 +123,8 @@ void Database_create(struct Connection *conn)
         struct Address addr = {.id = i, .set = 0};
         // then just assign it
         conn->db->rows[i] = addr;
+        // the dot notation (.id = i) means a 'designated initializer' is being used to initialize a struct
+        // https://gcc.gnu.org/onlinedocs/gcc/Designated-Inits.html explains Designated Initializers in detail
     }
 }
 
@@ -129,7 +138,8 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     char *res = strncpy(addr->name, name, MAX_DATA);
     // demonstrate the strncpy bug
     if(!res) die("Name copy failed");
-
+    // char *strncpy(char *dest, const char *src, size_t n) copies up to n characters from the
+    // string pointed to, by src to dest
     res = strncpy(addr->email, email, MAX_DATA);
     if(!res) die("Email copy failed");
 }
@@ -171,10 +181,12 @@ int main(int argc, char *argv[])
 
     char *filename = argv[1];
     char action = argv[2][0];
+    // argv[2][0] is a 2-dimensional array 
     struct Connection *conn = Database_open(filename, action);
     int id = 0;
 
     if(argc > 3) id = atoi(argv[3]);
+    // int atoi(const char *str) converts the string argument str to an integer (type int)
     if(id >= MAX_ROWS) die("There aren't that many records");
 
     switch(action) {
