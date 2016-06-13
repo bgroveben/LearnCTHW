@@ -8,6 +8,7 @@
 #include <string.h> // String handling
 
 // The #define directive takes two forms: defining a constant and creating a macro
+// http://tigcc.ticalc.org/doc/cpp.html GNU C Preprocessor
 #define MAX_DATA 512
 #define MAX_ROWS 100
 // It looks like these are constants
@@ -107,6 +108,8 @@ void Database_write(struct Connection *conn)
     // of the file of the given stream
 
     int rc = fwrite(conn->db, sizeof(struct Database), 1, conn->file);
+    // size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream)
+    // writes data from the array pointed to by ptr to the given stream 
     if(rc != 1) die("Failed to write database.");
 
     rc = fflush(conn->file);
@@ -181,7 +184,7 @@ int main(int argc, char *argv[])
 
     char *filename = argv[1];
     char action = argv[2][0];
-    // argv[2][0] is a 2-dimensional array 
+    // argv[2][0] is a 2-dimensional array
     struct Connection *conn = Database_open(filename, action);
     int id = 0;
 
