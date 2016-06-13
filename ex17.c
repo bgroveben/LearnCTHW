@@ -109,7 +109,7 @@ void Database_write(struct Connection *conn)
 
     int rc = fwrite(conn->db, sizeof(struct Database), 1, conn->file);
     // size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream)
-    // writes data from the array pointed to by ptr to the given stream 
+    // writes data from the array pointed to by ptr to the given stream
     if(rc != 1) die("Failed to write database.");
 
     rc = fflush(conn->file);
@@ -139,6 +139,7 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     addr->set = 1;
     // WARNING: bug, read the "How To Break It" and fix this
     char *res = strncpy(addr->name, name, MAX_DATA);
+    addr->name[MAX_DATA - 1]= '\0';
     // demonstrate the strncpy bug
     if(!res) die("Name copy failed");
     // char *strncpy(char *dest, const char *src, size_t n) copies up to n characters from the
