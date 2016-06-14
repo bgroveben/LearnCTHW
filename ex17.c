@@ -139,12 +139,16 @@ void Database_set(struct Connection *conn, int id, const char *name, const char 
     addr->set = 1;
     // WARNING: bug, read the "How To Break It" and fix this
     char *res = strncpy(addr->name, name, MAX_DATA);
+    // force the last character to be '\0' (the null character that terminates a string)
     addr->name[MAX_DATA - 1]= '\0';
     // demonstrate the strncpy bug
     if(!res) die("Name copy failed");
     // char *strncpy(char *dest, const char *src, size_t n) copies up to n characters from the
     // string pointed to, by src to dest
     res = strncpy(addr->email, email, MAX_DATA);
+    // add null character to the end of email as well 
+    addr->email[MAX_DATA - 1] = '\0';
+
     if(!res) die("Email copy failed");
 }
 
