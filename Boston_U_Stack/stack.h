@@ -17,7 +17,6 @@ Type: stackElementT
 This is the type of the objects entered in the stack.
 Edit it to change the type of things to be placed in the stack.
 */
-
 typedef char stackElementT;
 
 /*
@@ -27,9 +26,17 @@ It has a pointer 'contents' to a dynamically-allocated array (used to hold the c
 an integer 'maxSize' that holds the size of this array (i.e., the maximum number of things that can be held in the stack),
 and another integer 'top', which stores the array index of the element at the top of the stack.
 */
-
 typedef struct {
     stackElementT *contents;
     int maxSize;
     int top;
 }   stackT;
+
+/*
+Function: StackInit
+Usage: StackInit(&stack, maxSize);
+A new stack variable is initialized.
+The initialized stack is empty.
+MaxSize is used to determine the maximum number of characters that can be held in the stack.
+*/
+void StackInit(stackT *stackP, int maxSize);
