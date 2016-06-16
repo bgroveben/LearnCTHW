@@ -1,4 +1,4 @@
-// Function definitions (bodies) go here
+// stack function definitions (bodies) go here.
 
 /*
 File: stack.h

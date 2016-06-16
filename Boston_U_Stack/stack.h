@@ -1,4 +1,4 @@
-// Prototypes for each stack function go here
+// Stack types and prototypes for each stack function go here.
 
 /*
 File: stack.h
@@ -9,7 +9,7 @@ Topic: Stack - Array Implementation
 This is the interface for a stack of characters
 */
 
-#ifndef _STACK_H  // #ifndef - If this macro is not defined
+#ifndef _STACK_H  // #ifndef - Returns true if this macro is not defined
 #define _STACK_H
 
 /*
