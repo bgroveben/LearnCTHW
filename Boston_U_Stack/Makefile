@@ -15,4 +15,4 @@ stack.o: stack.c stack.h
 	$(CC) $(CFLAGS) -c stack.c
 
 clean:
-	rm -rf stack stack.o stacktest stacktest.o
+	rm -rf stacktest.dSYM stack stack.o stacktest stacktest.o
