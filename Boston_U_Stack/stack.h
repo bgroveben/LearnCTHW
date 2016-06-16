@@ -40,3 +40,13 @@ The initialized stack is empty.
 MaxSize is used to determine the maximum number of characters that can be held in the stack.
 */
 void StackInit(stackT *stackP, int maxSize);
+
+/*
+Function: StackDestroy
+Usage: StackDestroy(&stack);
+This function cleans up a stack when we are done with it.
+It should get rid of any dynamically-allocated memory and set the stack to some reasonable state.
+This function frees all memory associated with the stack (to prevent memory leaks).
+The 'stack' variable may not be used again unless StackInit(&stack, maxSize) is first called on the stack.
+*/
+void StackDestroy(stackT *stackP);

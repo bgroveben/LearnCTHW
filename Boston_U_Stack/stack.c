@@ -30,3 +30,13 @@ void StackInit(stackT *stackP, int maxSize)
     stackP->maxSize = maxSize; // set max size for checking fullness
     stackP->top = -1; // set up the top
 }
+
+void StackDestroy(stackT *stackP)
+{
+    // get rid of the array
+    free(stackP->contents);
+    // reset/free up the pointers
+    stackP->contents = NULL;
+    stackP->MaxSize = 0;
+    stackP->top = -1;
+}
