@@ -9,7 +9,7 @@ Topic: Stack - Array Implementation
 This is the interface for a stack of characters
 */
 
-#ifndef _STACK_H
+#ifndef _STACK_H  // #ifndef - If this macro is not defined
 #define _STACK_H
 
 /*
@@ -54,8 +54,8 @@ void StackDestroy(stackT *stackP);
 
 /*
 Functions: StackIsEmpty, StackIsFull
-Usage: if(StackIsEmpty(&stack))
-       if(StackIsFull(&stack))
+Usage: if(StackIsEmpty(&stack));
+       if(StackIsFull(&stack));
 These functions return a true value if the stack is empty or full.
 It is not necessary to pass a stack by reference (with a pointer) to these functions because they do not change the stack.
 However, then some of the stack functions would use pointers, and some would not.
@@ -63,3 +63,17 @@ It is more consistent to just pass stacks by reference (with a pointer) all the 
 */
 int StackIsEmpty(stackT *stackP);
 int StackIsFull(stackT *stackP);
+
+/*
+Functions: StackPush, StackPop
+Usage: StackPush(&stack, element);
+       element = StackPop(&stack);
+These are the fundamental stack operations that add an element to the top of the stack
+and remove an element from the top of the stack.
+A call to StackPop on an empty stack or to StackPush on a full stack will throw an error.
+Use StackIsFull and StackIsEmpty to avoid those errors.
+*/
+void StackPush(stackT *stackP, stackElementT element);
+stackElementT StackPop(stackT *stackP);
+
+#endif  // not defined _STACK_H

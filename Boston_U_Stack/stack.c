@@ -49,6 +49,27 @@ int StackIsEmpty(stackT *stackP)
 
 int StackIsFull(stackT *stackP)
 {
-    // when the top is equal to the maximum size minus 1, then the stack is full 
+    // when the top is equal to the maximum size minus 1, then the stack is full
     return stackP->top >= stackP->maxSize - 1;
+}
+
+void StackPush(stackT *stackP, stackElementT element)
+{
+    if (StackIsFull(stackP)) {
+        fprintf(stderr, "Cannot push element, stack is full.\n");
+        exit(1);
+    }
+    // Add element to contents array and update top
+    stackP->contents[++stackP->top] = element;
+}
+
+stackElementT StackPop(stackT *stackP)
+{
+    if (StackIsEmpty(stackP)) {
+        fprintf(stderr, "Cannot pop element, stack is empty.\n");
+        exit(1);
+    }
+    // We must update the top before the function returns, but we need the current value of top to get the correct element
+    // Using the -- (postfix aka double-minus) operator allows us to use the current value of top before it is decremented
+    return stackP->contents[stackP->top--];
 }
