@@ -50,3 +50,16 @@ This function frees all memory associated with the stack (to prevent memory leak
 The 'stack' variable may not be used again unless StackInit(&stack, maxSize) is first called on the stack.
 */
 void StackDestroy(stackT *stackP);
+
+
+/*
+Functions: StackIsEmpty, StackIsFull
+Usage: if(StackIsEmpty(&stack))
+       if(StackIsFull(&stack))
+These functions return a true value if the stack is empty or full.
+It is not necessary to pass a stack by reference (with a pointer) to these functions because they do not change the stack.
+However, then some of the stack functions would use pointers, and some would not.
+It is more consistent to just pass stacks by reference (with a pointer) all the time.
+*/
+int StackIsEmpty(stackT *stackP);
+int StackIsFull(stackT *stackP);

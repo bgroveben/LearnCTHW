@@ -31,7 +31,7 @@ void StackInit(stackT *stackP, int maxSize)
     stackP->top = -1; // set up the top
 }
 
-void StackDestroy(stackT *stackP)
+void StackDestroy(stackT *stackP) // this function only needs the stack to operate on
 {
     // get rid of the array
     free(stackP->contents);
@@ -39,4 +39,16 @@ void StackDestroy(stackT *stackP)
     stackP->contents = NULL;
     stackP->MaxSize = 0;
     stackP->top = -1;
+}
+
+int StackIsEmpty(stackT *stackP)
+{
+    // the top field is -1 when the stack is empty
+    return stackP->top < 0;
+}
+
+int StackIsFull(stackT *stackP)
+{
+    // when the top is equal to the maximum size minus 1, then the stack is full 
+    return stackP->top >= stackP->maxSize - 1;
 }
