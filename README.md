@@ -33,4 +33,4 @@ Printed in the United States of America.
 Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.  
 ISBN: 978-1-449-39991-7  
 ```
-I am on Chapter 1, pp 46.
+I am on Chapter 1, pp 47, Code Magnets.
