@@ -24,6 +24,9 @@ And a cheat sheet for when I get stuck:
 
 https://github.com/Frederick-S/Learn-C-The-Hard-Way-Exercise
 
+Here is a book on C:
+http://publications.gbdirect.co.uk/c_book/
+
 Thanks to:  
 ```
 Head First C  
