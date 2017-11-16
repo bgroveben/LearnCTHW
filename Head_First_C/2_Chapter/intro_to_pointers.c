@@ -7,6 +7,7 @@
 * If you’re not careful, you can quickly get lost chasing pointers through
 * memory.
 */
+#include <stdio.h>
 
 // Variable y is stored in the globals section of memory:
 int y = 1;
@@ -14,5 +15,7 @@ int main()
 {
     // Variable x will live in the stack:
     int x = 4;
+    // Use the & operator to find the memory address of the variable.
+    printf("x is stored at %i\n", &x);
     return 0;
 }
