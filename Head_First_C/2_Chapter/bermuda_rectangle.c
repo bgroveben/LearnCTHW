@@ -6,6 +6,7 @@ The game will need to keep control of lots of things, like scores, lives and the
 */
 
 // FIRST -- figure out what this code will print out.
+// Visualize the code execution at http://pythontutor.com/c.html#mode=edit
 
 #include <stdio.h>
 
