@@ -11,19 +11,19 @@ The game will need to keep control of lots of things, like scores, lives and the
 #include <stdio.h>
 
 // Write a go_south_east() function that takes arguments for the latitude and longitude, which it will then increase and decrease:
-void go_south_east(int lat, int lon)
+void go_south_east(int *lat, int *lon)
 {
     // Decrease the latitude:
-    lat = lat -1;
+    *lat = *lat -1;
     // Increase the longitude:
-    lon = lon + 1;
+    *lon = *lon + 1;
 }
 
 int main()
 {
     int latitude = 32;
     int longitude = -64;
-    go_south_east(latitude, longitude);
+    go_south_east(&latitude, &longitude);
     printf("Avast! Now at: [%i, %i]\n", latitude, longitude);
     return 0;
 }
