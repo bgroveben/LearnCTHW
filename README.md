@@ -14,7 +14,7 @@ https://github.com/zedshaw/learn-c-the-hard-way-lectures
 
 I am here:
 
-http://c.learncodethehardway.org/book/ex18.html 
+http://c.learncodethehardway.org/book/ex18.html
 
 Here's a handy reference site I found:
 
@@ -36,4 +36,4 @@ Printed in the United States of America.
 Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.  
 ISBN: 978-1-449-39991-7  
 ```
-I am on Chapter 1, pp 74.
+I am on Chapter 2, pp 94.
