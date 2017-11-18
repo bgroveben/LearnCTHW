@@ -5,6 +5,7 @@
 * the string, plus the \0 end character.
 * C will also associate the address of the first character with the name of the
 * variable.
+* BTW, look up "pointer decay".
 */
 #include <stdio.h>
 
