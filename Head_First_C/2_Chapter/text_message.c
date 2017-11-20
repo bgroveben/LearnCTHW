@@ -3,6 +3,7 @@
 * This function will skip the first six characters of the text message.
 */
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
