@@ -36,5 +36,5 @@ Printed in the United States of America.
 Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.  
 ISBN: 978-1-449-39991-7  
 ```
-I am on Chapter 2, pp 106.
-Be careful with scanf()
+I am on Chapter 2, pp 107.
+fgets() is an alternative to scanf()
