@@ -25,7 +25,10 @@ And a cheat sheet for when I get stuck:
 https://github.com/Frederick-S/Learn-C-The-Hard-Way-Exercise
 
 Here is a book on C:
-http://publications.gbdirect.co.uk/c_book/
+http://publications.gbdirect.co.uk/c_book/  
+
+Would you like to see what the code looks like after it has been compiled to Assembly?  
+=> otool -tv executable_filename
 
 Thanks to:  
 ```
@@ -36,5 +39,5 @@ Printed in the United States of America.
 Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.  
 ISBN: 978-1-449-39991-7  
 ```
-I am on Chapter 2, pp 113.
-In memory: char \*cards=“JQK”;
+I am on Chapter 2, pp 115.
+In memory: char cards[]=“JQK”;
