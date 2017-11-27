@@ -39,5 +39,5 @@ Printed in the United States of America.
 Published by O’Reilly Media, Inc., 1005 Gravenstein Highway North, Sebastopol, CA 95472.  
 ISBN: 978-1-449-39991-7  
 ```
-I am on Chapter 2, pp 116.
-Geek Bits
+I am on Chapter 2.5, pp 123.
+Strings
